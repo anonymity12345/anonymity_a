@@ -1,0 +1,30 @@
+# Native PyTorch inference dependencies. Install a matching PyTorch/CUDA build first.
+torch==2.7.0+cu126
+torchaudio==2.7.0+cu126
+transformers==4.57.3            # native GenerationMixin; shared with the vLLM adapter
+numpy<2.3                       # required by librosa / scipy stack on py3.12
+einops
+tqdm
+
+# ---- Speech / audio -----------------------------------------------------------
+soundfile
+librosa
+scipy
+hyperpyyaml==1.2.3
+omegaconf==2.3.0
+
+# ---- Flow-matching decoder dependencies ---------------------------------------
+conformer==0.3.2
+diffusers==0.27.2
+
+# ---- 3D rendering (talking-avatar video) --------------------------------------
+iopath
+fvcore
+pytorch3d                       # local: pip install fvcore iopath && build from source
+
+# ---- Gradio front-end (see app.py) --------------------------------------------
+gradio==5.49.1
+
+# ---- Optional: FlashAttention 2 (upstream local acceleration) -----------------
+# FA2 is optional and requires a compatible CUDA/PyTorch build.
+flash_attn==2.7.4.post1

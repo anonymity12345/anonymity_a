@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ex-omni-vllm-adapter"
+version = "0.1.0"
+description = "Optional Ex-Omni model registration for vLLM-Omni"
+requires-python = ">=3.10"
+
+[project.entry-points."vllm_omni.general_plugins"]
+ex_omni = "ex_omni.vllm_omni_backend:register"
+
+[tool.setuptools.packages.find]
+include = ["ex_omni*", "cosyvoice*", "matcha*"]
+namespaces = true

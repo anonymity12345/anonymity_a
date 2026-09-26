@@ -1,0 +1,11 @@
+# Install in a separate Python 3.12 environment, not the HF baseline environment.
+vllm==0.14.0
+vllm-omni @ git+https://github.com/vllm-project/vllm-omni.git@ed89c8b0436999e9210f11363f4eb512330a9dfa
+transformers==4.57.3
+hyperpyyaml==1.2.3
+conformer==0.3.2
+einops
+soundfile
+librosa
+imageio-ffmpeg
+# Build/install pytorch3d separately for this environment's torch/CUDA version.
